@@ -41,6 +41,7 @@ pairs = [
     [r"what should I eat for (.*)", ["For %1, I recommend trying something nutritious and delicious. How about some pasta or a salad?"]],
     [r"who are you\\?", ["I'm an AI chatbot created to assist you with any questions or tasks you might have."]],
     [r"I love (.*)", ["%1 is really interesting. What do you like most about it?"]],
+    [r"do you love me\\?", ["What is love baby don't hurt me"]],
 ]
 
 app = Flask(__name__)
