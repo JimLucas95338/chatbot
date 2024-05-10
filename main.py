@@ -48,6 +48,7 @@ pairs = [
     [r"how do I make (.*)", ["Making %1 can be quite interesting. Here are the steps generally involved: (provide general steps)"]],
     [r"what should I eat for (.*)", ["For %1, I recommend trying something nutritious and delicious. How about some pasta or a salad?"]],
     [r"who are you\\?", ["I'm an AI chatbot created to assist you with any questions or tasks you might have."]],
+    [r"I love you", ["Ahh, thanks back at ya!"]],
     [r"I love (.*)", ["%1 is really interesting. What do you like most about it?"]],
     [r"do you love me\\?", ["What is love baby don't hurt me"]],
     [r"where can I find (.*)\\?", ["You can typically find %1 in stores or online. What type of %1 are you looking for?"]],
