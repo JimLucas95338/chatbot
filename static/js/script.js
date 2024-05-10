@@ -15,14 +15,21 @@ function sendMessage() {
             },
             body: JSON.stringify({ userInput: userInput })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             var botResponse = data.response;
             appendBotMessage(botResponse);
         })
         .catch(error => {
             console.error("Error:", error);
+            appendBotMessage("Sorry, there was a server error.");
         });
+        
         document.getElementById("user-input").value = ""; // Clear input field
     }
 }

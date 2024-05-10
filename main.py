@@ -68,10 +68,17 @@ def index():
 
 @app.route("/get_response", methods=["POST"])
 def get_response():
-    user_input = request.json.get("userInput", "")
-    preprocessed_input = preprocess_input(user_input)
-    response = chatbot.respond(preprocessed_input)
-    return jsonify({"response": response})
+    try:
+        user_input = request.json.get("userInput", "")
+        preprocessed_input = preprocess_input(user_input)
+        response = chatbot.respond(preprocessed_input)
+        if response is None:
+            response = "I'm sorry, I didn't understand that."
+        return jsonify({"response": response})
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")  # Log the error to the console
+        return jsonify({"response": "An error occurred on the server."}), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True)
